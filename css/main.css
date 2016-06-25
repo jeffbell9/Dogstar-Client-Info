@@ -1,0 +1,70 @@
+
+#header h1 {
+	padding: 30px 0 30px;
+	text-align: center;
+	margin: 0 0 40px;
+	background-color: lightskyblue;
+	color: slategray;
+	border: 5px solid slategray;
+
+}
+
+#info {
+	width: 35%;
+	float: left;
+	margin-left: 100px;
+	text-align: center;
+}
+
+#show {
+	width: 35%;
+	float: right;
+	margin-right: 50px;
+	/*text-align: left;*/
+	color: midnightblue;
+	font-family: 'Poiret One', cursive;
+}
+
+body {
+	margin: 0 auto;
+	background-color: gainsboro;
+	width: 70%;
+}
+
+label {
+	display: block;
+	color: seagreen;
+	font-family: 'Indie Flower', cursive;
+}
+
+input {
+	text-align: center;
+	background-color: azure;
+	border-radius: 6px;
+}
+
+.buttons {
+	padding-top: 1em;
+}
+
+.button {
+	height: 2em;
+	border-radius: 6px;
+	margin-bottom: 20px;
+	margin-right: 5px;
+	outline: none;
+}
+
+.button:hover {
+	background-color: lightskyblue;
+}
+
+.button:focus {
+	background-color: lightskyblue;
+}
+
+
+
+/*#deleteAll {*/
+	/*margin-top: 200px;*/
+/*}*/
