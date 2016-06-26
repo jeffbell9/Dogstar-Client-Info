@@ -4,4 +4,4 @@
 ######form would be useful. I wanted to store the data in the browser, so I found out about  
 ######local storage and how to use it.
 
-[Try it!](https://cdn.rawgit.com/jeffbell9/Dogstar-Client-Info/master/index.html)
+[Try it!](https://rawgit.com/jeffbell9/Dogstar-Client-Info/master/index.html)
