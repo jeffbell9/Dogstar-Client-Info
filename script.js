@@ -80,16 +80,19 @@ $(document).ready(function() {
 		if ($("#dogname").val().length > 0 && $("#humanname").val().length > 0) {
 			if (localStorage.getItem('clients') !== null) {
 				clientInfo = JSON.parse(localStorage.getItem('clients'));
-			};
+			}
+
+			var data = clientObject;
+			var text = getClientInfoForEnter(data);
+
+			$("#show").html("<p>" + text + "</p>");
+			$(".input").val("");
+
 			clientInfo.push(clientObject);
 			localStorage.setItem('clients', JSON.stringify(clientInfo));
 
-		var data = clientObject;
-
-						var text = getClientInfoForEnter(data);
-						$("#show").append("<p>" + text + "</p>");
-						$(".input").val("");
 			clientObject = {};
+
 		} else {
 			alert("Please enter a client")
 		}
@@ -114,6 +117,7 @@ $(document).ready(function() {
 						found = true;
 				}
 			}
+
 		} else {
 			alert("Please enter a dog name");
 			found = true;
@@ -122,14 +126,15 @@ $(document).ready(function() {
 		if (found === false) {
 			$(".input").val("");
 			alert("no entry was found");
-			
 		}
 			
 	});
 
+
 	$("#clear").click( function () {
 		$("#show").html(startupText);
 	});
+
 
 	$("#all").click( function () {
 
