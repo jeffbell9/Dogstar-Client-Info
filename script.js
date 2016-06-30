@@ -1,6 +1,8 @@
 var clientInfo = [];
 var clientObject = {};
 
+var startupText = "<p>dog name:<br>human name:<br>address:<br>email:<br>phone:<br>";
+
 function getClientInfo(client, data) {
 	var text = "dog name: " + data[client].dogname + "<br>";
 	text += "human name: " + data[client].humanname + "<br>";
@@ -23,9 +25,34 @@ function getClientInfo(client, data) {
 	return text;
 }
 
+function getClientInfoForEnter(data) {
+	var text = "dog name: " + data.dogname + "<br>";
+	text += "human name: " + data.humanname + "<br>";
+	if (data.address) {
+		text += "address: " + data.address + "<br>";
+	} else {
+		text += "address: " + "<br>";
+	}
+	if (data.email) {
+		text += "email: " + data.email + "<br>";
+	} else {
+		text += "email: " + "<br>";
+	}
+	if (data.phone) {
+		text += "phone: " + data.phone + "<br>";
+	} else {
+		text += "phone: " + "<br>";
+	}
+
+	return text;
+}
+
 // enter or update clientObject key on change
 
 $(document).ready(function() {
+
+	$("#show").html(startupText);
+
 	$("#humanname").change(function() {
 		clientObject.humanname = $("#humanname").val();
 
@@ -56,7 +83,12 @@ $(document).ready(function() {
 			};
 			clientInfo.push(clientObject);
 			localStorage.setItem('clients', JSON.stringify(clientInfo));
-			$(".input").val("");
+
+		var data = clientObject;
+
+						var text = getClientInfoForEnter(data);
+						$("#show").append("<p>" + text + "</p>");
+						$(".input").val("");
 			clientObject = {};
 		} else {
 			alert("Please enter a client")
@@ -77,7 +109,7 @@ $(document).ready(function() {
 				// if found, retrieve and display all info for that object
 				if (clientObject.dogname === data[client].dogname) {
 						var text = getClientInfo(client, data);
-						$("#show").append("<p>" + text + "</p>");
+						$("#show").html("<p>" + text + "</p>");
 						$(".input").val("");
 						found = true;
 				}
@@ -96,17 +128,23 @@ $(document).ready(function() {
 	});
 
 	$("#clear").click( function () {
-		$("#show").text("");
+		$("#show").html(startupText);
 	});
 
 	$("#all").click( function () {
-		$("#show").text("");
-		var client;
-		var data = JSON.parse(localStorage.getItem('clients'));
 
-		for (client in data) {
-			var text = getClientInfo(client, data);
-			$("#show").append("<p>" + text + "</p>");
+		if (clientInfo === []) {
+			$("#show").html(startupText);
+		} else {
+			var client;
+			var data = JSON.parse(localStorage.getItem('clients'));
+
+			$("#show").html("");
+
+			for (client in data) {
+				var text = getClientInfo(client, data);
+				$("#show").append("<p>" + text + "</p>");
+			}
 		}
 	});
 
