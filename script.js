@@ -82,14 +82,14 @@ $(document).ready(function() {
 				clientInfo = JSON.parse(localStorage.getItem('clients'));
 			}
 
+			clientInfo.push(clientObject);
+			localStorage.setItem('clients', JSON.stringify(clientInfo));
+
 			var data = clientObject;
 			var text = getClientInfoForEnter(data);
 
 			$("#show").html("<p>" + text + "</p>");
 			$(".input").val("");
-
-			clientInfo.push(clientObject);
-			localStorage.setItem('clients', JSON.stringify(clientInfo));
 
 			clientObject = {};
 
@@ -137,12 +137,12 @@ $(document).ready(function() {
 
 
 	$("#all").click( function () {
-
-		if (clientInfo === []) {
-			$("#show").html(startupText);
-		} else {
 			var client;
 			var data = JSON.parse(localStorage.getItem('clients'));
+
+		if (data.length === 0) {
+			$("#show").html(startupText);
+		} else {
 
 			$("#show").html("");
 
@@ -163,8 +163,8 @@ $(document).ready(function() {
 		var client;
 		var data = JSON.parse(localStorage.getItem('clients'));
 
-		if ($("#show").text() !== "") {
-			$("#show").text("");
+		if (data.length > 0) {
+			$("#show").html(startupText);
 			for (client in data) {
 				if (clientObject.dogname === data[client].dogname) {
 					data.splice(client, 1);
