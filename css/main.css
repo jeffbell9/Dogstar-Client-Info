@@ -1,3 +1,10 @@
+/* Main */
+
+body {
+	margin: 0 auto;
+	background-color: gainsboro;
+	width: 70%;
+}
 
 #header h1 {
 	padding: 30px 0 30px;
@@ -9,26 +16,13 @@
 
 }
 
+/* Info */
+
 #info {
 	width: 35%;
 	float: left;
 	margin-left: 100px;
 	text-align: center;
-}
-
-#show {
-	width: 35%;
-	float: right;
-	margin-right: 50px;
-	/*text-align: left;*/
-	color: midnightblue;
-	font-family: 'Poiret One', cursive;
-}
-
-body {
-	margin: 0 auto;
-	background-color: gainsboro;
-	width: 70%;
 }
 
 label {
@@ -41,13 +35,14 @@ input {
 	text-align: center;
 	background-color: azure;
 	border-radius: 6px;
+	margin-bottom: 10px;
 }
 
 .buttons {
 	padding-top: 1em;
 }
 
-.button {
+button {
 	height: 2em;
 	border-radius: 6px;
 	margin-bottom: 20px;
@@ -55,12 +50,23 @@ input {
 	outline: none;
 }
 
-.button:hover {
+button:hover {
 	background-color: lightskyblue;
 }
 
-.button:focus {
+button:focus {
 	background-color: lightskyblue;
+}
+
+/* Show */
+
+#show {
+	width: 35%;
+	float: right;
+	margin-right: 50px;
+	/*text-align: left;*/
+	color: midnightblue;
+	font-family: 'Poiret One', cursive;
 }
 
 

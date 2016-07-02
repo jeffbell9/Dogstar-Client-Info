@@ -89,7 +89,7 @@ $(document).ready(function() {
 			var text = getClientInfoForEnter(data);
 
 			$("#show").html("<p>" + text + "</p>");
-			$(".input").val("");
+			$("input").val("");
 
 			clientObject = {};
 
@@ -113,7 +113,7 @@ $(document).ready(function() {
 				if (clientObject.dogname === data[client].dogname) {
 						var text = getClientInfo(client, data);
 						$("#show").html("<p>" + text + "</p>");
-						$(".input").val("");
+						$("input").val("");
 						found = true;
 				}
 			}
@@ -124,7 +124,7 @@ $(document).ready(function() {
 		}
 
 		if (found === false) {
-			$(".input").val("");
+			$("input").val("");
 			alert("no entry was found");
 		}
 			
