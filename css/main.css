@@ -3,7 +3,6 @@
 body {
 	margin: 0 auto;
 	background-color: gainsboro;
-	/*width: 70%;*/
 }
 
 #header h1 {
@@ -19,9 +18,6 @@ body {
 /* Info */
 
 #info {
-	/*width: 35%;*/
-	/*float: left;*/
-	/*margin-left: 100px;*/
 	text-align: left;
 }
 
@@ -65,10 +61,6 @@ button:focus {
 /* Show */
 
 #show {
-	/*width: 35%;*/
-	/*float: right;*/
-	/*margin-right: 50px;*/
-	/*text-align: left;*/
 	color: midnightblue;
 	font-family: 'Poiret One', cursive;
 }
