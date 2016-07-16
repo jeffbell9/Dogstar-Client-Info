@@ -3,7 +3,7 @@
 body {
 	margin: 0 auto;
 	background-color: gainsboro;
-	width: 70%;
+	/*width: 70%;*/
 }
 
 #header h1 {
@@ -19,16 +19,17 @@ body {
 /* Info */
 
 #info {
-	width: 35%;
-	float: left;
-	margin-left: 100px;
-	text-align: center;
+	/*width: 35%;*/
+	/*float: left;*/
+	/*margin-left: 100px;*/
+	text-align: left;
 }
 
 label {
 	display: block;
 	color: seagreen;
 	font-family: 'Indie Flower', cursive;
+	text-align: left;
 }
 
 input {
@@ -39,7 +40,10 @@ input {
 }
 
 .buttons {
+	margin-top: 10px;
 	padding-top: 1em;
+	text-align: left;
+
 }
 
 button {
@@ -61,9 +65,9 @@ button:focus {
 /* Show */
 
 #show {
-	width: 35%;
-	float: right;
-	margin-right: 50px;
+	/*width: 35%;*/
+	/*float: right;*/
+	/*margin-right: 50px;*/
 	/*text-align: left;*/
 	color: midnightblue;
 	font-family: 'Poiret One', cursive;
